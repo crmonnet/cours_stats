@@ -1,0 +1,14 @@
+version: "3"
+services:
+  bot_cours:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    volumes:
+      - ${Code_path}:/app/bot
+    # ports:
+      # - 
+    env_file:
+      - .env
+    container_name: cnt_cours
+    entrypoint: tail -f /dev/null
